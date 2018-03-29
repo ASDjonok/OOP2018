@@ -25,4 +25,16 @@ public class Sentence extends Object{
         }
         return result;
     }
+
+    public static void printClass(SentenceMember sentenceMember) {
+        if (sentenceMember instanceof Word) {
+            System.out.println("It is Word.");
+        } else {
+            if (sentenceMember instanceof Punctuation) {
+                System.out.println("It is Punctuation.");
+            } else {
+                System.out.println("It is unknown class.");
+            }
+        }
+    }
 }

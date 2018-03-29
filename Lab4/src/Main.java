@@ -5,6 +5,10 @@ public class Main {
         System.out.println(text/*.toString()*/);
         System.out.println("The End.");
 
+        System.out.println("\nP.S.:");
+        Sentence.printClass(new Punctuation("."));
+        Sentence.printClass(new Word("Hello"));
+
 //        text.doMyVariant();
         /*String s2 = "Hello, World! How are you?";
         s = s + "1";

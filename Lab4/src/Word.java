@@ -16,4 +16,8 @@ public class Word extends SentenceMember{
         }
         return result;
     }
+
+    public int getLength() {
+        return letters.length;
+    }
 }

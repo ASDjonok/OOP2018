@@ -16,4 +16,9 @@ public class Punctuation extends SentenceMember{
     public String toString() {
         return symbols;
     }
+
+    public boolean isQuestion() {
+//        return '?' == symbols.charAt(0);
+        return symbols.contains("?");
+    }
 }

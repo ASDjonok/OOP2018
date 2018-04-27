@@ -1,6 +1,18 @@
+import java.util.Arrays;
+import java.util.Collections;
+
 public class PropositionSet {
     private Proposition[] propositions;
     private int size;
+
+    public void sort() {
+        Arrays.sort(propositions, Collections.<Proposition>reverseOrder());
+    }
+
+    @Override
+    public String toString() {
+        return Arrays.toString(propositions);
+    }
 
     public PropositionSet(int size) {
         propositions = new Proposition[size];

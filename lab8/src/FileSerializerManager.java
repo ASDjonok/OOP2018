@@ -60,4 +60,39 @@ public class FileSerializerManager {
         }
         return myBrilliantSet;
     }
+
+    public void saveAsTextSequence(MyBrilliantSet myBrilliantSet,
+                                     String fileName) throws IOException {
+        /*ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(new File(fileName)));
+        for (Brilliant brilliant : myBrilliantSet) {
+            out.writeObject(brilliant);
+        }
+        out.close();*/
+        try(BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(new File(fileName)))) {
+//        BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(new File(fileName)));
+            for (Brilliant brilliant : myBrilliantSet) {
+                bufferedWriter.write(brilliant.getCost() +
+                        " " + brilliant.getWeight() + "\n");
+            }
+//            bufferedWriter.close();
+        }
+    }
+
+
+    public MyBrilliantSet openAsTextSequence(String fileName) throws IOException, ClassNotFoundException {
+        BufferedReader in = new BufferedReader(new FileReader(new File(fileName)));
+        MyBrilliantSet myBrilliantSet = new MyBrilliantSet();
+        String line = in.readLine();
+        while (line != null) {
+            String[] fieldValues = line.split(" ");
+            Brilliant brilliant = new Brilliant(Integer.parseInt(fieldValues[0]),
+                    Integer.parseInt(fieldValues[1]));
+            myBrilliantSet.add(brilliant);
+            line = in.readLine();
+        }
+        in.close();
+        return myBrilliantSet;
+    }
+
+
 }

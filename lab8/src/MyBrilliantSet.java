@@ -4,6 +4,8 @@ import java.util.Iterator;
 import java.util.Set;
 
 public class MyBrilliantSet implements Set<Brilliant>, Serializable{
+//    final long serialVersionUID = -5161207827521945616;
+
     private Node head;
     private Node tail;
     private int size;
